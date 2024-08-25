@@ -20,14 +20,6 @@ navbar = html.Div(
             ],
             className="navbar-inner"
         ),
-        html.Div(
-            [
-                html.Button("Edit Graph 1", id="edit-graph-1", className="mb-2"),
-                html.Button("Edit Graph 2", id="edit-graph-2", className="mb-2"),
-                html.Button("Edit Graph 3", id="edit-graph-3", className="mb-2"),
-            ],
-            className="edit-buttons"
-        ),
     ],
     id="navbar",
     className="vertical-navbar",
