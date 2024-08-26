@@ -4,8 +4,19 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 16px;
+}
+
 #main-content {
-    background-color: #f8f9fa;
-    border: 2px solid #000;
-    height: 100vh;
+    background-color: #c7bd68;
+    border-radius: 2rem;
+    max-height: 60vh;
+    margin-right: 1rem;
+    width: 100%;
+}
+
+#cytoscape-graph {
+    width: 100% !important;
+    height: 100% !important;
 }
