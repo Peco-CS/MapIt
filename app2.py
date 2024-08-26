@@ -6,17 +6,10 @@ import dash_cytoscape as cyto
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 app.layout = dbc.Container([
-    # Row for Toggle Button
     dbc.Row([
+        # Sidebar
         dbc.Col([
-            dbc.Button("Toggle Sidebar", id="toggle-button", color="primary", className="mb-3")
-        ], width=12),
-    ]),
-
-    # Row for Sidebar and Main Content
-    dbc.Row([
-        # Sidebar Panel (Collapsible)
-        dbc.Col([
+            dbc.Button("Toggle Sidebar", id="toggle-button", color="primary", className="mb-3"),
             dbc.Collapse(
                 dbc.Card([
                     dbc.CardHeader(html.H4("Graph Management", className="text-center")),
@@ -29,13 +22,11 @@ app.layout = dbc.Container([
                         dbc.Button("Update Topic", id="update-topic-btn", color="secondary", className="mb-3 w-100"),
                         dbc.Button("See Relation Topic", id="see-relation-btn", color="dark", className="mb-3 w-100"),
                     ])
-                ]),
-                id="sidebar-collapse",
-                is_open=True  # Sidebar starts visible
+                ]), id="sidebar-collapse", is_open=True
             )
-        ], id="sidebar-col", width=3),
+        ], width=3, id="sidebar-col"),
 
-        # Main Content Area
+        # Main content with graph
         dbc.Col([
             cyto.Cytoscape(
                 id='cytoscape-graph',
@@ -47,6 +38,7 @@ app.layout = dbc.Container([
                     {'data': {'source': 'B', 'target': 'C', 'label': 'B to C'}}
                 ],
                 layout={'name': 'preset'},  # Use preset to respect the specified positions
+                style={'width': '100%', 'height': '500px'},
                 stylesheet=[
                     {
                         'selector': 'node',
@@ -74,29 +66,29 @@ app.layout = dbc.Container([
                     }
                 ]
             )
-        ], id="main-content")
+        ], id="main-content", width=3)
     ]),
 
-    # Row for Information/Details Panel
+    # Information Panel
     dbc.Row([
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader(html.H5("Information & Actions", className="text-center")),
+                dbc.CardHeader(html.H5("Control", className="text-center")),
                 dbc.CardBody([
-                    html.Div(id="info-details", children="Details and updates will appear here."),
-                    # You can add more elements here like alerts, update forms, etc.
-                    dbc.Alert("This is an alert message!", id="alert", color="warning", is_open=False, className="mt-3"),
+                    html.Div(id="info-details", children="Acciones a realizar o problemas aparecerán aquí!"),
+                    dbc.Alert("This is an alert message!", id="alert", color="warning", is_open=True, className="mt-3"),
                 ])
             ])
         ], width=12)
-    ], className="mt-4")  # Add some margin at the top of this row
+    ], className="mt-4")
 ], fluid=True)
+
 
 # Callback to toggle the sidebar and adjust the layout
 @app.callback(
     [Output("sidebar-collapse", "is_open"),
      Output("sidebar-col", "width"),
-     Output("main-content-col", "width")],
+     Output("main-content", "width")],
     Input("toggle-button", "n_clicks"),
     [State("sidebar-collapse", "is_open")]
 )
@@ -108,6 +100,7 @@ def toggle_sidebar(n, is_open):
         else:
             return False, 0, 12  # Sidebar is closed, main content full width
     return is_open, 3, 9  # Default to sidebar open if no clicks
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)

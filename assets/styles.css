@@ -11,12 +11,5 @@ html {
 #main-content {
     background-color: #c7bd68;
     border-radius: 2rem;
-    max-height: 60vh;
     margin-right: 1rem;
-    width: 100%;
-}
-
-#cytoscape-graph {
-    width: 100% !important;
-    height: 100% !important;
 }
