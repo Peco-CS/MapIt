@@ -1,42 +1,11 @@
-.app-container {
-    display: flex;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main-content {
+    background-color: #f8f9fa;
+    border: 2px solid #000;
     height: 100vh;
-}
-
-.vertical-navbar {
-    width: 250px;
-    background-color: #2c3e50;
-    color: white;
-    padding: 20px;
-    transition: width 0.2s;
-}
-
-.vertical-navbar.collapsed {
-    width: 60px;
-}
-
-.navbar-toggle {
-    background-color: #34495e;
-    border: none;
-    color: white;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.navbar-inner {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-}
-
-.edit-buttons {
-    display: flex;
-    flex-direction: column;
-}
-
-.main-content {
-    flex-grow: 1;
-    padding: 20px;
-    background-color: #ecf0f1;
-    overflow-y: auto;
 }
