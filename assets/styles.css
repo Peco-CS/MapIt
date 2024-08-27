@@ -8,8 +8,70 @@ html {
     font-size: 16px;
 }
 
-#main-content {
-    background-color: #c7bd68;
-    border-radius: 2rem;
-    margin-right: 1rem;
+#main-container {
+    height: 90vh;
+}
+
+#bar {
+    height: 10vh;
+    background-color: #c9a7a4;
+    color: #fff;
+}
+
+#graph-container {
+    padding: 0;
+}
+
+#cytoscape-graph {
+    height: 100% !important;
+    width: 100% !important;
+    background-color: #F5EE9E;
+}
+
+#side-panel {
+    background-color: #070F2B;
+    height: 90vh;
+    color: #fff;
+    padding: 1rem;
+}
+
+#side-panel .btn-primary {
+    background-color: #1B1A55;
+    border-color: #1B1A55;
+}
+
+#side-panel .btn-success {
+    background-color: #535C91;
+    border-color: #535C91;
+}
+
+#side-panel .btn-danger {
+    background-color: #AB3428;
+    border-color: #AB3428;
+}
+
+#side-panel .btn-info {
+    background-color: #9290C3;
+    border-color: #9290C3;
+    color: #070F2B;
+}
+
+#side-panel .btn-warning {
+    background-color: #FFB703;
+    border-color: #FFB703;
+    color: #070F2B;
+}
+
+#actions {
+    margin: 2rem 0;
+}
+
+.info-container {
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2rem 0;
+    background-color: #2D728F;
+    color: #fff;
+    margin: 1rem 1rem;
 }
