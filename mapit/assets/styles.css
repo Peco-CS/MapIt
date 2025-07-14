@@ -1,0 +1,104 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bs-dark);
+}
+
+#app-container {
+    width: 50%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#toolbar {
+    display: flex;
+    width: 100%;
+    padding: 20px 0px 10px 0px;
+    height: 18vh; 
+}
+
+#left-toolbar {
+    flex: 0 0 70%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#space-toolbar {
+    flex: 0 0 10%;
+}
+
+#right-toolbar {
+    flex: 0 0 20%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+#left-toolbar > * {
+    text-align: left;
+}
+
+#left-toolbar > div {
+    min-width: 100px; 
+    padding: 0;
+    box-sizing: border-box;
+    margin-right: 10px; 
+}
+
+#cyto-space {
+    position: relative;
+    width: 100%;
+    height: 78vh;
+    border-radius: 5px;
+    overflow: hidden; 
+}
+
+#cyto-location {
+    position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: left;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#cyto-graph {
+    position: absolute; 
+    width: 100%;        
+    height: 100%;      
+    top: 0;
+    left: 0;
+}
+
+#cyto-editor {
+    position: absolute; 
+    width: 200px;       
+    height: 250px;      
+    bottom: 0;          
+    left: 0;           
+    border-radius: 5px; 
+    padding: 0;
+    display: none;
+}
+
+
+#cyto-editorUpdate {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 5px;
+}
+
+#cyto-editorText {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    resize: none;
+    padding: 10px;
+}

@@ -1,0 +1,38 @@
+[
+    {
+        "selector": "node",
+        "style": {
+            "shape": "round-rectangle",
+            "width": "150px",           
+            "height": "100px",
+            "color": "#303030",        
+            "label": "data(label)",
+            "text-valign": "center",    
+            "text-halign": "center", 
+            "background-color": "#888",
+            "border-color": "#888",
+            "border-width": 4,
+            "font-size": "14px",     
+            "padding": "10px",
+            "text-wrap": "wrap"        
+        }
+    },
+    {
+        "selector": "edge",
+        "style": {
+            "label": "data(label)",
+            "line-color": "#888",
+            "target-arrow-color": "#888",
+            "target-arrow-shape": "triangle",
+            "curve-style": "bezier",
+            "font-size": "12px",
+            "color": "#888"
+        }
+    },
+    {
+        "selector": "core",
+        "style": {
+            "background-color": "#7c3f58"
+        }
+    }
+]
